@@ -1,0 +1,14 @@
+var express = require('express');
+var helmet = require('helmet');
+var app = express();
+app.use(helmet.xssFilter());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.referrerPolicy());
+var routes = require('./routes/Route');
+const port = process.env.PORT || 5000;
+app.set('view engine','ejs');
+app.use('/Client',express.static('Client'));
+app.use('/',routes);
+app.listen(port, () => console.log(`Listening on port ${port}`));
+console.log('server started ');

@@ -1,58 +1,39 @@
 import React,{Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
+import 'materialize-css/dist/css/materialize.min.css';
+import Navbar from './Components/Layout/Navbar';
+import Slider from './Components/Layout/Slider';
+import CardComponent from './Components/Layout/Card';
+import Footer from './Components/Layout/Footer';
+import {BrowserRouter as Router,Route} from "react-router-dom";
+import Register from "./auth/register";
+import Login from "./auth/Login";
+import About from "./Components/Navcomponents/About";
+import Contact from "./Components/Navcomponents/contact";
 
 class App extends Component {
-  state = {
-    response: '',
-    post: '',
-    responseToPost: ''
-  };
 
   componentDidMount()
   {
-    this.callApi().then(
-        res => this.setState({ response: res.express }))
-        .catch(err => console.log(err));
-  }
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-    if (response.status !== 200)
-      throw Error(body.message);
-    return body;
-  };
-
-  handleSubmit =  (e) => {
-    e.preventDefault();
-    const postfromuser ={
-        post:this.state.post
-    };
-    axios.post('/api/world',{postfromuser}).then(res =>{
-        console.log(res);
-        this.setState({
-            responseToPost:res.data
-        });
-    });
 
   };
+
   render() {
     return (
+        <Router>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <p>Edit <code>src/App.js</code> and save to reload.</p>
-            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a>
-          </header>
-          <p>{this.state.response}</p>
-          <form onSubmit={this.handleSubmit}>
-            <p><strong>Post to Server:</strong></p>
-            <input type="text" value={this.state.post} name="post" onChange={e => this.setState({post: e.target.value})}/>
-            <button type="submit">Submit</button>
-          </form>
-          <p>{this.state.responseToPost}</p>
+        <Navbar/>
+            <Route exact path="/" component={Slider}/>
+            <div className="container">
+                <Route exact path="/register" component={Register}/>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/about" component={About}/>
+                <Route exact path="/contact" component={Contact}/>
+            </div>
+            <Route exact path="/" component={CardComponent}/>
+            <Footer/>
         </div>
+        </Router>
     );
   }
 }

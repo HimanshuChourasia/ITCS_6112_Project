@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const dbmodel = require(path.join(__dirname,'..','/model','DBModel.js'));
 const router = express.Router();
 const fs = require('fs');
 const logger = require('morgan');

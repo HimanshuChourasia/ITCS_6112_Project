@@ -6,11 +6,11 @@
 
 const mongoose = require('mongoose');
 const schema = mongoose.Schema ;
-const password = 'test' ;
+const password = 'ragini123' ;
 
 //const server = '127.0.0.1:27017'; // REPLACE WITH YOUR DB SERVER
 //const database = 'Recipes';      // REPLACE WITH YOUR DB NAME
-const url = "mongodb+srv://DB_User1:"+`${password}`+"@clusterssdi-vv7zy.mongodb.net/test?retryWrites=true&w=majority" ;
+const url = "mongodb+srv://ragini123:"+password+"@ssdi-cluster-yjkyo.mongodb.net/test?retryWrites=true&w=majority" ;
 /**
  * Database.
  */
@@ -38,3 +38,5 @@ class Database {
 }
 
 let dbconn = new Database();
+
+module.exports = dbconn;

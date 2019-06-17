@@ -68,6 +68,21 @@ router.post('/createUser',urlencodedparser,
             .matches('[A-Za-z0-9]+').withMessage('Address should  be alphanumeric')
             .escape() ,
         sanitizeBody('address_2').blacklist(['*','!','@','$','#','%','^','&','(',')','_','-','+','~','`','|',',',';',':','"','.','/','<','>']),
+        check('city')
+            .not().isEmpty().withMessage('city should not be empty')
+            .matches('[A-Za-z0-9]+').withMessage('city should  be alphanumeric')
+            .escape(),
+        sanitizeBody('city').blacklist(['*','!','@','$','#','%','^','&','(',')','_','-','+','~','`','|',',',';',':','"','.','/','<','>']),
+        check('state')
+            .not().isEmpty().withMessage('state should not be empty')
+            .matches('[A-Za-z0-9]+').withMessage('state should  be alphanumeric')
+            .escape(),
+        sanitizeBody('state').blacklist(['*','!','@','$','#','%','^','&','(',')','_','-','+','~','`','|',',',';',':','"','.','/','<','>']),
+        check('county')
+            .not().isEmpty().withMessage('county should not be empty')
+            .matches('[A-Za-z0-9]+').withMessage('county should  be alphanumeric')
+            .escape(),
+        sanitizeBody('county').blacklist(['*','!','@','$','#','%','^','&','(',')','_','-','+','~','`','|',',',';',':','"','.','/','<','>']),
         check('email')
             .not().isEmpty().withMessage('Email should not be empty')
             .trim().withMessage('Email should not have Spacing allowed between the characters')
@@ -101,12 +116,13 @@ router.post('/createUser',urlencodedparser,
         const errorsres = validationResult(req);
         if (!errorsres.isEmpty()) {
             const errorArray = errorsres.array();
-            const {location,mparam,value,msg} = errorArray[0];
+
+            const {location,param,value,msg} = errorArray[0];
             res.status(400).json({
                 Status: 'Failure',
                 ErrorCode: '29',
-                ErrorDescription: 'Validation Error.Please look at Error Detail field for more details.',
-                ErrorDetail:`${msg}`
+                [param]: `${msg}`,
+                ErrorDetail:''
             })
         }
     else{
@@ -117,7 +133,7 @@ router.post('/createUser',urlencodedparser,
                     res.status(400).json({
                         Status: 'Failure',
                         ErrorCode: '20',
-                        ErrorDescription: 'Email/Username already present',
+                        email: 'Email/Username already present',
                         ErrorDetail: ''
                     });
                 } else {
@@ -226,15 +242,16 @@ router.post('/createUser',urlencodedparser,
 // API route : /api/users/login
 // Method: POST
 
-router.post('/login',urlencodedparser,[check('username')
-    .not().isEmpty().withMessage('username should not be empty')
-    .trim().withMessage('username should not have Spacing allowed between the characters')
-    .escape().withMessage('username should not have escape sequences allowed')
-    .isEmail().normalizeEmail().withMessage('username should be in email format'),
+router.post('/login',urlencodedparser,[
+    check('email')
+        .not().isEmpty().withMessage('Email should not be empty')
+        .trim().withMessage('Email should not have Spacing allowed between the characters')
+        .escape().withMessage('Email should not have escape sequences allowed')
+        .isEmail().normalizeEmail().withMessage('Email should be in proper format'),
+    sanitizeBody('email').blacklist(['*','!','$','#','%','^','&','(',')','_','-','+','~','`','|',',',';',':','"','/','<','>']),
 
 
-
-    check('psw')
+    check('password')
         .not().isEmpty().withMessage('Password')
         .trim().withMessage('No Spacing allowed between the characters in password field')
         .escape().withMessage('No escape sequences allowed in password field')
@@ -243,12 +260,12 @@ router.post('/login',urlencodedparser,[check('username')
     const errorsres = validationResult(req);
     if (!errorsres.isEmpty()) {
         const errorArray = errorsres.array();
-        const {location,mparam,value,msg} = errorArray[0];
+        const {location,param,value,msg} = errorArray[0];
         res.status(400).json({
             Status: 'Failure',
             ErrorCode: '29',
-            ErrorDescription: 'Validation Error.Please look at Error Detail field for more details.',
-            ErrorDetail:`${msg}`
+            [param]: `${msg}`,
+            ErrorDetail:''
         })
     }
     else {
@@ -259,7 +276,7 @@ router.post('/login',urlencodedparser,[check('username')
                 res.status(400).json({
                     Status: 'Failure',
                     ErrorCode: '27',
-                    ErrorDescription: 'username  not found.',
+                    email: 'email  not found.',
                     ErrorDetail: ''
 
                 })
@@ -301,7 +318,7 @@ router.post('/login',urlencodedparser,[check('username')
                         res.status(400).json({
                             Status: 'Failure',
                             ErrorCode: '28',
-                            ErrorDescription: 'Password incorrect',
+                            password: 'Password incorrect',
                             ErrorDetail: ''
 
                         });

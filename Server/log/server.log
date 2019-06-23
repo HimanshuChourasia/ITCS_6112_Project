@@ -311,3 +311,4 @@
 ::1 - - [17/Jun/2019:19:26:43 +0000] "POST /api/users/login HTTP/1.1" 400 86 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"
 ::1 - - [17/Jun/2019:19:26:59 +0000] "POST /api/users/login HTTP/1.1" 200 437 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"
 ::1 - - [17/Jun/2019:21:53:08 +0000] "POST /api/users/login HTTP/1.1" 200 437 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"
+::1 - - [23/Jun/2019:15:19:53 +0000] "POST /api/users/login HTTP/1.1" 400 86 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"

@@ -53,6 +53,7 @@ class Navbar extends Component {
                             <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
                             <i className="material-icons">close</i>
                         </div>
+                        
                     </form>
                 </li>
 
@@ -81,6 +82,7 @@ class Navbar extends Component {
                         <i className="material-icons">close</i>
                     </div>
                 </form>
+               
             </li>
         </ul>
             );
@@ -103,6 +105,7 @@ class Navbar extends Component {
                                   <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
                                   <i className="material-icons">close</i>
                               </div>
+                             
                           </form>
                       </li>
                   </ul>

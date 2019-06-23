@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import img1 from '../../images/pills-1.jpg';
 import img2 from '../../images/pills-2.jpg';
 import img3 from '../../images/pills-3.jpg';
-
+import SearchBar from 'material-ui-search-bar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {Link} from "react-router-dom";
 class Card extends Component {
     componentDidMount() {
 
@@ -18,11 +20,23 @@ class Card extends Component {
                     </div>
                 </div>
                 <div className="row">
+                <MuiThemeProvider>
+                                            <SearchBar
+                                                onChange={() => console.log('onChange')}
+                                                onRequestSearch={() => console.log('onRequestSearch')}
+                                                style={{
+                                                    margin: '0 auto',
+                                                    maxWidth: 800
+                                                }}
+                                            />
+                                        </MuiThemeProvider>
+                </div>
+                <div className="row">
                     <div className="col m4 l4 s12 cards-container">
                         <div className="card sticky-action">
                             <div className="card-image">
                                 <img src={img1} alt=""/>
-                                <a className="btn red btn-floating halfway-fab pulse activator">+</a>
+                                <a className="btn red btn-floating halfway-fab pulse activator">+<Link className="black-text" to="/item_page"></Link></a>
                             </div>
                             <div className="card-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deleniti ducimus excepturi maxime nesciun</p>
@@ -32,7 +46,7 @@ class Card extends Component {
                             </div>
                             <div className="card-action center-align">
                                 <div>
-                                <a href="#" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
+                                <a href="/item_page" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +66,7 @@ class Card extends Component {
                             </div>
                             <div className="card-action center-align">
                                 <div>
-                                    <a href="#" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
+                                    <a href="/item_page" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +85,7 @@ class Card extends Component {
                                 </div>
                                 <div className="card-action center-align">
                                     <div>
-                                        <a href="#" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
+                                        <a href="/item_page" className="waves-effect waves-light btn-small green lighten-2 text-center"><i className="material-icons right">shopping</i>Buy Now</a>
                                     </div>
                                 </div>
                             </div>

@@ -10,6 +10,7 @@ import Register from "./Components/auth/register";
 import Login from "./Components/auth/Login";
 import About from "./Components/Navcomponents/About";
 import Contact from "./Components/Navcomponents/contact";
+import item_page from "./Components/Navcomponents/item_page";
 import {Provider} from 'react-redux';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
@@ -59,6 +60,7 @@ if (localStorage.jwtToken) {
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/contact" component={Contact}/>
+                <Route exact path="/item_page" component={item_page}/>
             </div>
             <Route exact path="/" component={CardComponent}/>
             <Footer/>

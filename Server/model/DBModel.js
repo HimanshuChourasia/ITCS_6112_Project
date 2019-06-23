@@ -10,7 +10,7 @@ const schema = mongoose.Schema ;
 
 const server = '127.0.0.1:27017'; // REPLACE WITH YOUR DB SERVER
 const database = 'SSDIDB';      // REPLACE WITH YOUR DB NAME
-//const url = "mongodb+srv://ragini123:"+password+"@ssdi-cluster-yjkyo.mongodb.net/test?retryWrites=true&w=majority" ;
+//const url = "mongodb+srv://ragini123:ragini123@ssdi-cluster-yjkyo.mongodb.net/test?retryWrites=true&w=majority" ;
 const url =`mongodb://${server}/${database}` ;
 /**
  * Database.

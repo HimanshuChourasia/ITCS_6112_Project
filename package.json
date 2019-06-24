@@ -26,7 +26,6 @@
         "helmet": "^3.18.0",
         "jsonwebtoken": "^8.5.1",
         "material-ui": "^0.20.2",
-        "material-ui-search-bar": "^0.4.2",
         "mdbreact": "^4.16.0",
         "mongoose": "^5.5.12",
         "morgan": "^1.9.1",
@@ -34,13 +33,8 @@
         "passport": "^0.4.0",
         "passport-jwt": "^4.0.0",
         "react-router-dom": "^5.0.1",
-        "react-search-box": "^2.0.1",
-        "react-shopping-cart": "^1.8.31",
         "react-tap-event-plugin": "^3.0.3",
         "uuid": "^3.3.2",
         "yarn": "^1.16.0"
-    },
-    "devDependencies": {
-        "babel-eslint": "^10.0.2"
     }
 }

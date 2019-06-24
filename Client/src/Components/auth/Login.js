@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
+import TextFieldInputGroup from '../common/TextFieldInputGroup';
 import { loginUser } from '../../actions/authActions';
+import {Link} from "react-router-dom";
 
 class Login extends Component {
   constructor() {
@@ -16,13 +17,13 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+      this.props.history.push('/');
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+      this.props.history.push('/');
     }
 
     if (nextProps.error) {
@@ -44,56 +45,34 @@ class Login extends Component {
     };
     this.props.loginUser(userData);
   };
-    render() {
-      const {error} = this.state ;
-      return (
-            <div className="login">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-8 m-auto">
-                    <h1 className="display-4 text-center">Log In</h1>
-                    <p className="lead text-center">
-                      Sign in to your  account
-                    </p>
-                    <form onSubmit={this.onSubmit}>
-                      <div className="form-group">
-                        <input
-                            type="email"
-                            className={classnames('form-control form-control-lg', {
-                              'is-invalid': error.email
-                            })}
-                            placeholder="Email Address"
-                            id="email"
-
-                            onChange={this.onChange}
-                        />
-                        {error.email && (
-                            <div className="invalid-feedback">{error.email}</div>
-                        )}
-                      </div>
-                      <div className="form-group">
-                        <input
-                            type="password"
-                            className={classnames('form-control form-control-lg', {
-                              'is-invalid': error.password
-                            })}
-                            placeholder="Password"
-                            id="password"
-
-                            onChange={this.onChange}
-                        />
-                        {error.password && (
-                            <div className="invalid-feedback">{error.password}</div>
-                        )}
-                      </div>
-                      <input type="submit" className="btn btn-info btn-block mt-4" />
-                    </form>
+  render() {
+    const {error} = this.state ;
+    return (
+        <div className="login">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 m-auto">
+                <h1 className="display-4 text-center">Log In</h1>
+                <p className="lead text-center">
+                  Sign in to your  account
+                </p>
+                <form onSubmit={this.onSubmit}>
+                  <TextFieldInputGroup type="text" placeholder="email" id="email" onChange={this.onChange} error={error.email}/>
+                  <TextFieldInputGroup type="password" placeholder="password" id="password" onChange={this.onChange} error={error.password}/>
+                  <div className="input-field">
+                    <button className="btn btn-link">Sign In</button>
                   </div>
-                </div>
+                  <div>
+                    <Link className="btn btn-link" to="/register">Register</Link>
+                  </div>
+                </form>
+
               </div>
             </div>
-        );
-    }
+          </div>
+        </div>
+    );
+  }
 }
 
 Login.propTypes = {

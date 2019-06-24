@@ -3,9 +3,6 @@ import image1 from '../../images/image1.jpg';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles(theme => ({
     button: {
       margin: theme.spacing(1),

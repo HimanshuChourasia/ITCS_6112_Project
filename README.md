@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Enterprise Pharma Application
+A web-based portal for Plasma Corp which would allow customers of Plasma Corp to place an order via the web and automate the process inventory management and orders. The customers would also get notifications and would be able to track the order they have placed through the application 
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Note : The code requires Nodejs 10.00 version or higher
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.Clone the repo using 
+  git clone https://github.com/HimanshuChourasia/ITCS_6112_Project.git
+2. Use the terminal/ command line and type in the following commands.
+  cd ~
+  cd your_folder_location
+3. Type in the following commands.
+npm install
+cd Client 
+npm install
+cd ..
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Running the Code
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. To start the application run the following command from the project main folder.
+  yarn dev
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will start the application at port 3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Built With
 
-### Code Splitting
+* [React](https://reactjs.org/) - A javascript library for frontend/
+* [Node](https://nodejs.org/en/) - Backend framework in javascript.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-### Making a Progressive Web App
+## Versioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+We use [Git](https://git-scm.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/HimanshuChourasia/Movie_Recommendations_Using_MRJob/tags). 
 
-### Advanced Configuration
+## Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* **Himanshu Chourasia** - *Initial work* - [HimanshuChourasia](https://github.com/HimanshuChourasia)
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* StackOverFlow
+

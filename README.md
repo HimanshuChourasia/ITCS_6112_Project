@@ -53,7 +53,8 @@ We use [Git](https://git-scm.com/) for versioning. For the versions available, s
 ## Authors
 
 * **Himanshu Chourasia** - *Initial work* - [HimanshuChourasia](https://github.com/HimanshuChourasia)
-
+* **Ragini Ragnathan** - *Initial work* - 
+* **Sourav Roy Chaudhary *Initial work* - 
 
 
 ## License

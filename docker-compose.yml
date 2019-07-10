@@ -1,0 +1,42 @@
+version: "2"
+services:
+  client:
+    container_name: react-app
+    build:
+      context: ./Client
+    volumes:
+      - frontend-data:/Client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    restart: always
+  server:
+    container_name: node-app
+    build:
+      context: ./Server
+    volumes:
+      - backend-data:/Server
+    restart: always
+    ports:
+      - "5000:5000"
+    links:
+      - db
+  db:
+    image: mongo:latest
+    container_name: "mongodb"
+    restart: always
+    environment:
+      - MONGO_DATA_DIR = /data/db
+      - MONGO_LOG_DIR = /data/log
+    volumes:
+      - mongo-data-volume:/data/db
+      - mongo-data-log:/data/log
+    ports:
+      - 27017:27017
+volumes:
+  frontend-data:
+  backend-data:
+  mongo-data-volume:
+  mongo-data-log:
+

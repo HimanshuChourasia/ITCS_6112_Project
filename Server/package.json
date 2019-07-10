@@ -4,8 +4,8 @@
     "description": "Server Package json",
     "main": "server.js",
     "scripts": {
-        "client": "cd Client && yarn start",
-        "server": "cd server && nodemon server.js",
+        "client": "cd .. & cd Client && yarn start",
+        "server": "nodemon server.js",
         "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
     },
     "author": "himanshu",

@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "client": "cd Client && yarn start",
-        "server": "cd server && nodemon server.js",
+        "server": "cd Server && nodemon server.js",
         "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
         "unit": "./node_modules/.bin/mocha --reporter spec",
         "test": "npm run unit"

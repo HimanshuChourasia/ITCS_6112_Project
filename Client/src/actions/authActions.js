@@ -9,7 +9,7 @@ export const registeruser = (userdata,history) => (dispatch) => {
     const headers = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     };
-    axios.post('http://localhost:5000/api/users/createUser',newUserStr,headers)
+    axios.post('http://server:5000/api/users/createUser',newUserStr,headers)
         .then(res => {
             history.push('/login')
         })
@@ -30,7 +30,7 @@ export const loginUser = userData => dispatch => {
     };
 
     axios
-        .post('http://localhost:5000/api/users/login', userStr,headers)
+        .post('http://server:5000/api/users/login', userStr,headers)
         .then(res => {
             // Save to localStorage
             const { token } = res.data;

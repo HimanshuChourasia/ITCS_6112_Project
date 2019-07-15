@@ -11,6 +11,8 @@ services:
     depends_on:
       - server
     restart: always
+    links:
+      - server
   server:
     container_name: node-app
     build:

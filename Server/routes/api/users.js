@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const gravatar = require('gravatar');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const uuidv1 = require('uuid/v1');
 const path = require('path');
 const express = require('express');
@@ -150,12 +150,13 @@ router.post('/createUser',urlencodedparser,
                         avatar: url,
                         password: req.body.password
                     };
-                    bcrypt.genSalt(10)
+                    bcryptjs.genSalt(10)
                         .then((salt) => {
 
                             console.log(salt);
                             newUser.salt = salt;
-                            return bcrypt.hash(newUser.password, salt);
+                            return bcryptjs
+                                .hash(newUser.password, salt);
 
 
                         })

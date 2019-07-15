@@ -3,7 +3,7 @@ FROM node:latest
 RUN mkdir -p Client
 WORKDIR /Client
 # Copy the contents of package.json and package-lock.json
-COPY ["package.json","package-lock.json","./"]
+COPY ["package.json","./"]
 # RUN npm install to install dependencies
 RUN npm install
 #Copy Source files

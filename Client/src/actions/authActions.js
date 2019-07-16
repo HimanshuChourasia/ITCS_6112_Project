@@ -9,16 +9,21 @@ export const registeruser = (userdata,history) => (dispatch) => {
     const headers = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     };
+	console.log(newUserStr);
     axios.post('http://server:5000/api/users/createUser',newUserStr,headers)
         .then(res => {
-            history.push('/login')
+			
+            history.push('/login') 
         })
-        .catch(err => dispatch(
+        .catch(err => 
+			dispatch(
             {
-                type:GET_ERRORS,
+                
+				type:GET_ERRORS,
                 payload:err.response.data
             }
-        ) )
+		
+        )  )
 
 
 };

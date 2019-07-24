@@ -2,7 +2,6 @@
 A web-based portal for Plasma Corp which would allow customers of Plasma Corp to place an order via the web and automate the process inventory management and orders. The customers would also get notifications and would be able to track the order they have placed through the application 
 
 
-
 ## Getting Started
 [Table of contents]
 

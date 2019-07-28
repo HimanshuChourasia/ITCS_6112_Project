@@ -13,7 +13,7 @@ const router = express.Router();
 const fs = require('fs');
 const logger = require('morgan');
 const bodyparserjson = bodyParser.json();
-const accessLogStream = fs.createWriteStream(path.join(__dirname,'..','..','/Log','server.log'),{flags:'a+'});
+const accessLogStream = fs.createWriteStream(path.join(__dirname,'..','..','/log','server.log'),{flags:'a+'});
 router.use(logger('combined',{stream:accessLogStream}));
 const urlencodedparser = bodyParser.urlencoded({ extended: false });
 const auth_key = require(path.join(__dirname,'/auth_keys','keys.js'));

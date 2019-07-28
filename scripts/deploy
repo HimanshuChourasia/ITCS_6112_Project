@@ -1,0 +1,10 @@
+#!/bin/bash
+ssh nodeuser@ec2-18-221-144-67.us-east-2.compute.amazonaws.com <<EOF
+cd ~
+cd ITCS_6112_Project
+git pull
+npm install --production
+pm2 restart all
+exit
+EOF
+

@@ -1,1 +1,4 @@
 ::1 - - [10/Jul/2019:21:57:10 +0000] "POST /api/users/createUser HTTP/1.1" 200 562 "-" "PostmanRuntime/7.15.0"
+::1 - - [15/Jul/2019:00:31:53 +0000] "POST /api/users/login HTTP/1.1" 400 82 "http://192.168.99.100:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"
+::1 - - [15/Jul/2019:00:33:09 +0000] "POST /api/users/createUser HTTP/1.1" 200 552 "http://192.168.99.100:3000/register" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"
+::1 - - [15/Jul/2019:00:37:20 +0000] "POST /api/users/login HTTP/1.1" 400 82 "http://192.168.99.100:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0"

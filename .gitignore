@@ -3,6 +3,8 @@
 .idea/
 package-lock.json
 .project 
+stderr.log
+stdout.log
 # dependencies
 node_modules/
 auth_keys/

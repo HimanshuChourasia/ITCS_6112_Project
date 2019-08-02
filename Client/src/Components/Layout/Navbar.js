@@ -90,7 +90,7 @@ class Navbar extends Component {
         return (
             <div>
 
-            <nav className="nav-wrapper green lighten-2 z-depth-1">
+            <nav className="nav-wrapper yellow lighten-2 z-depth-1">
               <div className="container">
                   <img src={logo} alt="Logo" className="hide-on-med-and-down brand-logo left" style={{height:64}}/>
 

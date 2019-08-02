@@ -9,7 +9,6 @@ A web-based portal for Plasma Corp which would allow customers of Plasma Corp to
 None
 
 
-
 Note : The code requires Nodejs 10.00 version or higher
 
 1.Clone the repo using 

@@ -1,0 +1,31 @@
+{
+	"apps":[
+		{
+		"name":"Pharma-App-Server",
+		"script":"./Server/server.js",
+		"instances":"1",
+		"exec_mode":"fork",
+		"error_file":"Client_stderr.log",
+		"out_file":"Client_stdout.log",
+		"env":{
+			"NODE_ENV":"production",
+			"PORT":"5000"
+		}
+	  },
+	  {
+		"name":"Pharma-App-Client",
+		"cwd":"./Client",	
+		"script":"npm",
+		"args": "start",
+		"error_file":"Client_stderr.log",
+		"out_file":"Client_stdout.log",
+		"instances":"1",
+		"exec_mode":"fork",
+		"env":{
+			"NODE_ENV":"production",
+			"PORT":"3000"
+		}
+	  }
+	]
+
+}
